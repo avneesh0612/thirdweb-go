@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"thirdweb-go/handlers"
+	handler "thirdweb-go/handlers"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -21,8 +21,7 @@ func main() {
 	router := gin.Default()
 
 	// Route handlers / endpoints
-	router.GET("/getNFTs", handler.GetNFTs)
-	router.POST("/claimNFT", handler.ClaimNFT)
+	router.POST("/generate", handler.GenerateSignature)
 
 	// Start and run the server
 	router.Run("localhost:8080")

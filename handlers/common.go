@@ -6,11 +6,11 @@ import (
 	"github.com/thirdweb-dev/go-sdk/v2/thirdweb"
 )
 
-func getContract() *thirdweb.NFTDrop {
+func getContract() *thirdweb.NFTCollection {
 	sdk := initSdk()
-	collectionAddress := "0x05B8aab3fd77580C29c6510d8C54D9E6be4262d2"
+	collectionAddress := "0xc9cD8FB4D61204171af7dE5B7aB7aB7c948597CB"
 
-	contract, _ := sdk.GetNFTDrop(collectionAddress)
+	contract, _ := sdk.GetNFTCollection(collectionAddress)
 
 	return contract
 }
@@ -18,7 +18,7 @@ func getContract() *thirdweb.NFTDrop {
 func initSdk() *thirdweb.ThirdwebSDK {
 	privateKey := os.Getenv("PRIVATE_KEY")
 
-	sdk, err := thirdweb.NewThirdwebSDK("mumbai", &thirdweb.SDKOptions{
+	sdk, err := thirdweb.NewThirdwebSDK("goerli", &thirdweb.SDKOptions{
 		PrivateKey: privateKey,
 	})
 	if err != nil {
